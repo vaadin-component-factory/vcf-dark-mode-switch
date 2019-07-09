@@ -1,18 +1,19 @@
 {
-  "name": "vcf-element",
+  "name": "vcf-dark-mode-switch",
   "version": "0.1.0",
-  "description": "Hierarchical element visualizing web component",
-  "main": "theme/lumo/vcf-element.js",
+  "description": "Vaadin Component Factory Dark Mode Switch",
+  "main": "theme/lumo/vcf-dark-mode-switch.js",
   "author": "Vaadin Ltd",
   "license": "https://raw.githubusercontent.com/vaadin/vaadin-incubator-element/master/LICENSE",
   "repository": {
     "type": "git",
-    "url": "vaadin-component-factory/vcf-element"
+    "url": "vaadin-component-factory/vcf-dark-mode-switch"
   },
   "keywords": [
     "Vaadin",
     "vaadin-incubator-element",
     "vaadin-component-factory",
+    "vcf-dark-mode-switch",
     "web-components",
     "web-component",
     "polymer"
@@ -38,7 +39,8 @@
     "@polymer/polymer": "^3.0.0",
     "@vaadin/vaadin-element-mixin": "^2.1.3",
     "@vaadin/vaadin-lumo-styles": "^1.5.0",
-    "@vaadin/vaadin-themable-mixin": "^1.4.4"
+    "@vaadin/vaadin-themable-mixin": "^1.4.4",
+    "@vaadin/vcf-toggle-button": "file:../vcf-toggle-button"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
