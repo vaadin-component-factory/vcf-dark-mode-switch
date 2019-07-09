@@ -1,15 +1,12 @@
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin';
+import 'vcf-toggle-button';
 
 class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   static get template() {
     return html`
-      <style>
-        :host {
-          display: block;
-        }
-      </style>
+      <vcf-toggle-button label="[[label]]" checked="[[darkMode]]" on-change="toggleDarkMode"></vcf-toggle-button>
     `;
   }
 
@@ -22,11 +19,33 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get properties() {
-    return {};
+    return {
+      label: String,
+      darkMode: {
+        type: Boolean,
+        value: false
+      }
+    };
   }
 
-  connectedCallback() {
-    super.connectedCallback();
+  ready() {
+    super.ready();
+    this.darkMode = JSON.parse(localStorage.getItem('vcf-dark-mode'));
+    this.applyDarkMode();
+  }
+
+  toggleDarkMode() {
+    this.darkMode = !this.darkMode;
+    localStorage.setItem('vcf-dark-mode', this.darkMode);
+    this.applyDarkMode();
+  }
+
+  applyDarkMode() {
+    if (this.darkMode) {
+      document.documentElement.setAttribute('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('theme');
+    }
   }
 }
 

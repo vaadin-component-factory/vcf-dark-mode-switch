@@ -17,8 +17,13 @@
   <body>
     <div class="vertical-section-container">
       <demo-snippet>
+        <style>
+          [theme~='dark'] body {
+            background-color: #333;
+          }
+        </style>
         <template>
-          <vcf-dark-mode-switch></vcf-dark-mode-switch>
+          <vcf-dark-mode-switch label="Dark Mode"></vcf-dark-mode-switch>
         </template>
       </demo-snippet>
     </div>
