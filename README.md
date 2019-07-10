@@ -5,13 +5,13 @@
 Install `vcf-dark-mode-switch`:
 
 ```sh
-npm i @vaadin/vcf-dark-mode-switch --save
+npm i @vaadin-component-factory/vcf-dark-mode-switch --save
 ```
 
 Once installed, import it in your application:
 
 ```js
-import '@vaadin/vcf-dark-mode-switch/vcf-dark-mode-switch.js';
+import '@vaadin-component-factory/vcf-dark-mode-switch/vcf-dark-mode-switch.js';
 ```
 
 ## Running demo

@@ -1,7 +1,7 @@
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin';
-import 'vcf-toggle-button';
+import '@vaadin-component-factory/vcf-toggle-button';
 
 class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   static get template() {
