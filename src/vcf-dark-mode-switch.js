@@ -15,7 +15,7 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.1.0';
+    return '0.2.0';
   }
 
   static get properties() {
@@ -30,7 +30,25 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
 
   ready() {
     super.ready();
-    this.darkMode = JSON.parse(localStorage.getItem('vcf-dark-mode'));
+
+    // get user preference from local storage
+    const storedDarkMode = JSON.parse(localStorage.getItem('vcf-dark-mode'));
+    if (storedDarkMode !== null) {
+      this.darkMode = storedDarkMode;
+    } else {
+      // if user has no preferences, then try to set dark mode based on OS setting
+      const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+      this.darkMode = darkMQ.matches;
+      // listen to changes in OS setting for dark mode
+      darkMQ.addEventListener('change', e => {
+        // update dark mode if the user still doesn't have any preferences
+        const storedDarkMode = JSON.parse(localStorage.getItem('vcf-dark-mode'));
+        if (storedDarkMode === null) {
+          this.darkMode = e.matches;
+          this.applyDarkMode();
+        }
+      });
+    }
     this.applyDarkMode();
   }
 
