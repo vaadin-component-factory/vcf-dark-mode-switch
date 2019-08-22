@@ -15,7 +15,7 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.2.1';
+    return '0.2.2';
   }
 
   static get properties() {
@@ -40,7 +40,7 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
       const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
       this.darkMode = darkMQ.matches;
       // listen to changes in OS setting for dark mode
-      darkMQ.addEventListener('change', e => {
+      darkMQ.addListener(e => {
         // update dark mode if the user still doesn't have any preferences
         const storedDarkMode = JSON.parse(localStorage.getItem('vcf-dark-mode'));
         if (storedDarkMode === null) {
