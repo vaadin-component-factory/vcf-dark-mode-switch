@@ -1,6 +1,6 @@
 {
   "name": "@vaadin-component-factory/vcf-dark-mode-switch",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Vaadin Component Factory Dark Mode Switch",
   "main": "theme/lumo/vcf-dark-mode-switch.js",
   "author": "Vaadin Ltd",
