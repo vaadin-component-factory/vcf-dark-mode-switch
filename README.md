@@ -1,5 +1,9 @@
 # &lt;vcf-dark-mode-switch&gt;
 
+## Demo
+
+https://vcf-dark-mode-switch.netlify.com/
+
 ## Installation
 
 Install `vcf-dark-mode-switch`:
@@ -25,9 +29,10 @@ And use it:
 You can provide a label via a `label` attribute.
 
 By toggling the dark mode switch:
- - A `theme="dark"` attribute will be toggled on the `html` tag.
- - The user's preference will be persisted on `localStorage` with a key `vcf-dark-mode`.
- - On page refresh, the persisted user's preference will be applied.
+
+- A `theme="dark"` attribute will be toggled on the `html` tag.
+- The user's preference will be persisted on `localStorage` with a key `vcf-dark-mode`.
+- On page refresh, the persisted user's preference will be applied.
 
 **Note that the component applies dark mode preference from the OS level if the user's preference is not set.**
 
