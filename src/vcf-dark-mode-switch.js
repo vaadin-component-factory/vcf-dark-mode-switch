@@ -15,7 +15,7 @@ class VcfDarkModeSwitch extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.2.6';
+    return '0.2.7';
   }
 
   static get properties() {
