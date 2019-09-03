@@ -7,12 +7,32 @@
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script type="module" src="demo.js"></script>
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        .centered {
+          max-width: 1000px;
+        }
+        main {
+          opacity: 1;
+          transition: opacity 1s;
+        }
+        main.hidden {
+          opacity: 0;
+        }
+      </style>
     </custom-style>
+    <script>
+      window.addEventListener('WebComponentsReady', () => document.querySelector('main').classList.remove('hidden'));
+    </script>
   </head>
   <body>
-    <div class="vertical-section-container">
+    <main class="vertical-section-container centered hidden">
+      <h3>Basic usage</h3>
       <demo-snippet>
+        <style>
+          [theme~='dark'] h3 {
+            color: #fff;
+          }
+        </style>
         <template>
           <style>
             [theme~='dark'] body {
@@ -22,6 +42,6 @@
           <vcf-dark-mode-switch label="Dark Mode"></vcf-dark-mode-switch>
         </template>
       </demo-snippet>
-    </div>
+    </main>
   </body>
 </html>
