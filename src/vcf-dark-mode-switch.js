@@ -69,7 +69,3 @@ customElements.define(VcfDarkModeSwitch.is, VcfDarkModeSwitch);
  * @namespace Vaadin
  */
 window.Vaadin.VcfDarkModeSwitch = VcfDarkModeSwitch;
-
-if (window.Vaadin.runIfDevelopmentMode) {
-  window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', VcfDarkModeSwitch);
-}
